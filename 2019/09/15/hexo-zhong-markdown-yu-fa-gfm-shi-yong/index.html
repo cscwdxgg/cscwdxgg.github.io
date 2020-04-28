@@ -1,0 +1,1806 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    <!-- shw2018 洪卫  modify 2019.08.15-->
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Hexo中Markdown语法(GFM)使用, linux，lnmp，php，python，html">
+    <meta name="baidu-site-verification" content="fmlEuI34ir">
+    <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
+    <meta name="description" content="欢迎来访呀朋友
+1 Markdown语法1.1 标题Markdown支持6种级别的标题，对应html标签 h1 ~ h6
+复制
+# h1   //一级标题 对应 &amp;lt;h1&amp;gt; &amp;lt;/h1&amp;gt;## h2   //二级标题 对应">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Hexo中Markdown语法(GFM)使用 | Asz的博客</title>
+    <!--<link rel="icon" type="image/png" href="/favicon.png">-->
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+    
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+    <body>
+
+        <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <span class="logo-span">Asz的博客</span>
+                </a>
+            </div>
+            
+
+
+<!-- <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/AV" class="waves-effect waves-light">
+            
+            <i class="fa fa-music"></i>
+            
+            <span>视听</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于我</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <i class="fa fa-envelope"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/navi" class="waves-effect waves-light">
+            
+            <i class="fa fa-rocket"></i>
+            
+            <span>快捷导航</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul> -->
+
+<!-- 支持二级菜单特性 洪卫 shw2018 modify 2019.09.17  -->
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/" class="waves-effect waves-light">
+              
+                <i class="fa fa-home"></i>
+              
+              <span>首页</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+              <a href="/archives" class="waves-effect waves-light">
+                
+                  <i class="fa fa-archive"></i>
+                
+                <span>归档</span>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+              </a>
+
+            <ul class="sub-nav menus_item_child ">
+              
+                <li> 
+                  <a href="/categories" >
+                    
+                      <i class="fa fa-bookmark" style="margin-top: -20px;"></i>
+                    
+                    <span>分类</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+              <a href="/AV" class="waves-effect waves-light">
+                
+                  <i class="fa fa-music"></i>
+                
+                <span>视听</span>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+              </a>
+
+            <ul class="sub-nav menus_item_child ">
+              
+                <li> 
+                  <a href="/galleries" >
+                    
+                      <i class="fa fa-photo" style="margin-top: -20px;"></i>
+                    
+                    <span>图片</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/about" class="waves-effect waves-light">
+              
+                <i class="fa fa-user-circle-o"></i>
+              
+              <span>关于我</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/contact" class="waves-effect waves-light">
+              
+                <i class="fa fa-envelope"></i>
+              
+              <span>留言板</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/friends" class="waves-effect waves-light">
+              
+                <i class="fa fa-address-book"></i>
+              
+              <span>友情链接</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/navi" class="waves-effect waves-light">
+              
+                <i class="fa fa-rocket"></i>
+              
+              <span>快捷导航</span>
+            </a>
+
+            
+      </li>
+    
+
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <div class="logo-name">Asz的博客</div>
+        <div class="logo-desc">
+            
+            莱芜职业技术学院 | 机电一体化
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/AV" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-music"></i>
+                
+                视听
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于我
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-envelope"></i>
+                
+                留言板
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        <li>
+            <a href="/navi" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-rocket"></i>
+                
+                快捷导航
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/cscwdxgg" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+   
+   
+<!-- 支持二级菜单特性 洪卫 shw2018 modify 2019.09.17  -->
+<!-- <ul class="menu-list mobile-menu-list">
+    
+        <li class="m-nav-item">
+                
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-home"></i>
+                        
+                        首页
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="javascript:;">
+                            
+                            <i class="fa fa-fw fa-archive"></i>
+                            
+                            归档
+                            <span class="m-icon"><i class="fa fa-chevron-right"></i></span>
+                    </a>
+                <ul>
+                  
+                    <li> 
+                      <a href="/categories" >
+                           
+                            <i class="fa fa-bookmark" style="left: 18px; position: absolute;"></i>
+                       
+                       <span>分类</span>
+                      </a>
+                    </li>
+                   
+                </ul>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="javascript:;">
+                            
+                            <i class="fa fa-fw fa-music"></i>
+                            
+                            视听
+                            <span class="m-icon"><i class="fa fa-chevron-right"></i></span>
+                    </a>
+                <ul>
+                  
+                    <li> 
+                      <a href="/galleries" >
+                           
+                            <i class="fa fa-photo" style="left: 18px; position: absolute;"></i>
+                       
+                       <span>图片</span>
+                      </a>
+                    </li>
+                   
+                </ul>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/about" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-user-circle-o"></i>
+                        
+                        关于我
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/contact" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-envelope"></i>
+                        
+                        留言板
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/friends" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-address-book"></i>
+                        
+                        友情链接
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/navi" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-rocket"></i>
+                        
+                        快捷导航
+                    </a>
+              
+            </li>
+        
+
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/cscwdxgg" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul> -->
+
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/cscwdxgg" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+        
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        Hexo中Markdown语法(GFM)使用
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- shw2018 洪卫  modify 2019.08.15-->
+<!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Markdown语法/" target="_blank">
+                                <span class="chip bg-color">Markdown语法</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/hexo/" class="post-category" target="_blank">
+                                hexo
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-09-15
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                        Asz
+                    
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        3.4k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        13 分
+                    </div>
+                    
+                
+                
+                
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv" ></span>
+    
+                
+
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><a href="https://raw.githubusercontent.com/wugenqiang/picGo/master/pictures/013.jpg" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://raw.githubusercontent.com/wugenqiang/picGo/master/pictures/013.jpg" alt="欢迎来访呀朋友">欢迎来访呀朋友</a></p>
+<h1 id="1-Markdown语法"><a href="#1-Markdown语法" class="headerlink" title="1 Markdown语法"></a>1 Markdown语法</h1><h2 id="1-1-标题"><a href="#1-1-标题" class="headerlink" title="1.1 标题"></a>1.1 标题</h2><p>Markdown支持6种级别的标题，对应html标签 h1 ~ h6</p>
+<p>复制</p>
+<pre><code># h1   //一级标题 对应 &lt;h1&gt; &lt;/h1&gt;## h2   //二级标题 对应 &lt;h2&gt; &lt;/h2&gt;### h3  //三级标题 对应 &lt;h3&gt; &lt;/h3&gt;#### h4  //四级标题 对应 &lt;h4&gt; &lt;/h4&gt;##### h5  //五级标题 对应 &lt;h5&gt; &lt;/h5&gt;###### h6  //六级标题 对应 &lt;h6&gt; &lt;/h6&gt;</code></pre><h2 id="1-2-段落及区块引用"><a href="#1-2-段落及区块引用" class="headerlink" title="1.2 段落及区块引用"></a>1.2 段落及区块引用</h2><p>Markdown提供了一个特殊符号 &gt; 用于段首进行强调，被强调的文字部分将会高亮显示</p>
+<p>复制</p>
+<pre><code>&gt; 这段文字将会被高亮显示...</code></pre><p>以上标记显示效果如下：</p>
+<p><a href="https://raw.githubusercontent.com/wugenqiang/picGo/master/pictures/20190331144721.png" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://raw.githubusercontent.com/wugenqiang/picGo/master/pictures/20190331144721.png" alt="img"></a></p>
+<h2 id="1-3-插入链接或图片"><a href="#1-3-插入链接或图片" class="headerlink" title="1.3 插入链接或图片"></a>1.3 插入链接或图片</h2><p>Markdown针对链接和图片的处理也比较简单，可以使用下面的语法进行标记</p>
+<p>复制</p>
+<pre><code>[点击跳转至百度](https://www.baidu.com)![图片](https://raw.githubusercontent.com/wugenqiang/picGo/master/pictures/015.jpg)</code></pre><p>以上标记显示效果如下：</p>
+<p><a href="https://www.baidu.com/" target="_blank" rel="noopener">点击跳转至百度</a><br><a href="https://raw.githubusercontent.com/wugenqiang/picGo/master/pictures/015.jpg" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://raw.githubusercontent.com/wugenqiang/picGo/master/pictures/015.jpg" alt="图片"></a></p>
+<p><a href="https://raw.githubusercontent.com/wugenqiang/picGo/master/pictures/015.jpg" target="_blank" rel="noopener">图片</a></p>
+<p>注： 引用图片和链接的唯一区别就是在最前方添加一个感叹号。</p>
+<h2 id="1-4-列表"><a href="#1-4-列表" class="headerlink" title="1.4 列表"></a>1.4 列表</h2><p>Markdown支持有序列表和无序列表两种形式：</p>
+<ul>
+<li>无序列表使用 * 或 + 或 - 标识</li>
+<li>有序列表使用数字加 . 标识，例如：1.</li>
+</ul>
+<h2 id="1-5-分隔线"><a href="#1-5-分隔线" class="headerlink" title="1.5 分隔线"></a>1.5 分隔线</h2><p>有时候，为了排版漂亮，可能会加入分隔线。Markdown加入分隔线非常简单，使用下面任意一种形式都可以</p>
+<p>复制</p>
+<pre><code>***---</code></pre><p>以上标记显示效果如下：</p>
+<hr>
+<hr>
+<h2 id="1-6-内容强调"><a href="#1-6-内容强调" class="headerlink" title="1.6 内容强调"></a>1.6 内容强调</h2><p>有时候，我们对某一部分文字进行强调，使用 * 或 _ 包裹即可。使用单一符号标记的效果是斜体，使用两个符号标记的效果是加粗</p>
+<p>复制</p>
+<pre><code>*这里是斜体*_这里是斜体_**这里是加粗**__这里是加粗__***这里是加粗并斜体***___这里是加粗并斜体___</code></pre><p>以上标记显示效果如下：</p>
+<p><em>这里是斜体</em><br><em>这里是斜体</em></p>
+<p><strong>这里是加粗</strong><br><strong>这里是加粗</strong></p>
+<p><strong>这里是加粗并斜体</strong><br><strong>这里是加粗并斜体</strong></p>
+<h2 id="1-7-删除线"><a href="#1-7-删除线" class="headerlink" title="1.7 删除线"></a>1.7 删除线</h2><p>复制</p>
+<pre><code>这样来 ~~删除一段文本~~</code></pre><p>以上标记显示效果如下：</p>
+<p>这样来 删除一段文本</p>
+<h2 id="1-8-高亮显示"><a href="#1-8-高亮显示" class="headerlink" title="1.8 高亮显示"></a>1.8 高亮显示</h2><p>复制</p>
+<pre><code>使用&lt;code&gt;\`&lt;/code&gt;来强调字符//想打出 ` (反引号)需要转义，加&lt;code&gt;&lt;/code&gt;标签强调比如`突出背景色`来显示强调效果</code></pre><p>以上标记显示效果如下：</p>
+<p>使用```来强调字符<br>比如 <code>突出背景色</code> 来显示强调效果</p>
+<h2 id="1-9-嵌套引用"><a href="#1-9-嵌套引用" class="headerlink" title="1.9 嵌套引用"></a>1.9 嵌套引用</h2><p>复制</p>
+<pre><code>&gt; 动物&gt;&gt; 水生动物&gt;&gt; 陆生动物&gt;&gt;&gt; 猴子&gt;&gt;&gt; 人&gt;&gt;&gt;&gt; 程序猿&gt;&gt;&gt;&gt; 攻城狮&gt;&gt;产品狗 //这里需要注意，没有空行间隔，忽略降级引用标记射鸡虱   //这里需要注意，没有空行间隔，忽略降级引用标记&gt;&gt; 两栖类动物&gt;&gt;&gt; 大鳄鱼唐老鸭两个回车结束引用,不在引用范围内了！</code></pre><p>以上标记显示效果如下：</p>
+<blockquote>
+<p>动物</p>
+<blockquote>
+<p>水生动物<br>陆生动物</p>
+<blockquote>
+<p>猴子<br>人</p>
+<blockquote>
+<p>程序猿<br>攻城狮<br>产品狗 //这里需要注意，没有空行间隔，忽略降级引用标记<br>射鸡虱 //这里需要注意，没有空行间隔，忽略降级引用标记</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>两栖类动物</p>
+<blockquote>
+<p>大鳄鱼<br>唐老鸭</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>两个回车结束引用,不在引用范围内了！</p>
+<h2 id="1-10-修改图片"><a href="#1-10-修改图片" class="headerlink" title="1.10 修改图片"></a>1.10 修改图片</h2><h3 id="1-10-1-设置图片尺寸"><a href="#1-10-1-设置图片尺寸" class="headerlink" title="1.10.1 设置图片尺寸"></a>1.10.1 设置图片尺寸</h3><p>在 markdown 直接使用提供的语法引入图片是无法设置大小的，所以我们需要用到 html 的 img 标签。</p>
+<p>复制</p>
+<pre><code>&lt;img width="  " alt="描述" src="url"/&gt;</code></pre><p>例如：</p>
+<p>复制</p>
+<pre><code>&lt;img width="267px" alt="欢迎来访呀朋友" src="https://raw.githubusercontent.com/wugenqiang/picGo/master/pictures/013.jpg"/&gt;</code></pre><p>效果如下：</p>
+<p><a href="https://raw.githubusercontent.com/wugenqiang/picGo/master/pictures/013.jpg" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://raw.githubusercontent.com/wugenqiang/picGo/master/pictures/013.jpg" alt="欢迎来访呀朋友">欢迎来访呀朋友</a></p>
+<p>在 markdown 设置图片居中是需要通过 div 来控制的。</p>
+<p>复制</p>
+<pre><code>&lt;div align=center&gt;&lt;img width="267px" alt="欢迎来访呀朋友" src="https://raw.githubusercontent.com/wugenqiang/picGo/master/pictures/013.jpg"/&gt;&lt;/div&gt;</code></pre><p>效果如下：</p>
+<p><a href="https://raw.githubusercontent.com/wugenqiang/picGo/master/pictures/013.jpg" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://raw.githubusercontent.com/wugenqiang/picGo/master/pictures/013.jpg" alt="欢迎来访呀朋友">欢迎来访呀朋友</a></p>
+<h2 id="1-11-插入代码块"><a href="#1-11-插入代码块" class="headerlink" title="1.11 插入代码块"></a>1.11 插入代码块</h2><p>Markdown在IT圈子里面比较流行的一个重要原因是，它能够轻松漂亮地插入代码。<br>方法是，使用三个反引号 ` 进行包裹即可。如果是行内代码引用，使用单个反引号进行包裹</p>
+<p>代码块语法遵循标准 <code>markdown</code> 代码，使用 <code>开始 ，</code> 结束 例如：</p>
+<p>复制</p>
+<pre><code>​```Python#!/usr/bin/env python# -*- coding: utf-8 -*-print 'Hello World! ```</code></pre><p>以上标记显示效果如下：</p>
+<p>复制</p>
+<pre><code>#!/usr/bin/env python# -*- coding: utf-8 -*-print 'Hello World!</code></pre><p>注：很多人不知道怎么输入反引号。在英文模式下，找到键盘最左侧esc键下面的第一个键点击即可。<br>有人会问：<br>如何在代码块中打出 <code>实际上是使用 4个` 包含 3个` 就可以了，想表示更多，最外层+1就好了。
+\````
+\</code><br>```<br>````</p>
+<h2 id="1-12-插入表格"><a href="#1-12-插入表格" class="headerlink" title="1.12 插入表格"></a>1.12 插入表格</h2><p>表格是Markdown语法中比较复杂的一个，其语法如下：</p>
+<p>复制</p>
+<pre><code>列1   | 列2 | 列3 ----- | --- | ---- 第1行 | 12  | 13  第2行 | 22  | 23  第3行 | 32  | 33</code></pre><p>以上标记显示效果如下：</p>
+<table>
+<thead>
+<tr>
+<th align="left">列1</th>
+<th align="left">列2</th>
+<th align="left">列3</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">第1行</td>
+<td align="left">12</td>
+<td align="left">13</td>
+</tr>
+<tr>
+<td align="left">第2行</td>
+<td align="left">22</td>
+<td align="left">23</td>
+</tr>
+<tr>
+<td align="left">第3行</td>
+<td align="left">32</td>
+<td align="left">33</td>
+</tr>
+</tbody></table>
+<p>可以使用<code>冒号</code>来定义对齐方式：</p>
+<p>全居中样式：</p>
+<p>复制</p>
+<pre><code>表头|条目一|条目二:---:|:---:|:---:项目|项目一|项目二</code></pre><p>以上标记显示效果如下：</p>
+<table>
+<thead>
+<tr>
+<th align="center">表头</th>
+<th align="center">条目一</th>
+<th align="center">条目二</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">项目</td>
+<td align="center">项目一</td>
+<td align="center">项目二</td>
+</tr>
+</tbody></table>
+<p>可能有人喜欢左对齐或者右对齐，也可以设置:</p>
+<p>复制</p>
+<pre><code>| 左对齐    |  右对齐 | 居中 || :-------- | -------:| :--: || Computer  | 5000 元 |  1台 || Phone     | 1999 元 |  1部 |</code></pre><p>以上标记显示效果如下：</p>
+<table>
+<thead>
+<tr>
+<th align="left">左对齐</th>
+<th align="right">右对齐</th>
+<th align="center">居中</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Computer</td>
+<td align="right">5000 元</td>
+<td align="center">1台</td>
+</tr>
+<tr>
+<td align="left">Phone</td>
+<td align="right">1999 元</td>
+<td align="center">1部</td>
+</tr>
+</tbody></table>
+<p>注：三个短竖杠左右的冒号用于控制对齐方式，只放置左边冒号表示文字居左，只放置右边冒号表示文字居右，如果两边都放置冒号表示文字居中。</p>
+<h2 id="1-13-特殊符号处理"><a href="#1-13-特殊符号处理" class="headerlink" title="1.13 特殊符号处理"></a>1.13 特殊符号处理</h2><p>Markdown使用反斜杠\插入语法中用到的特殊符号。在Markdown中，主要有以下几种特殊符号需要处理：</p>
+<p>复制</p>
+<pre><code>\   反斜线`   反引号*   星号_   底线{}  花括号[]  方括号()  括弧#   井字号+   加号-   减号.   英文句点!   惊叹号</code></pre><p>例如，如果你需要插入反斜杠，就连续输入两个反斜杠即可：\ \ =&gt; \ 。</p>
+<p>注：在内容中输入以上特殊符号的时候一定要注意转义，否则将导致内容显示不全，甚至排版混乱。</p>
+<p>重要：MarkDown表格中使用竖线，如何做？</p>
+<p>表格中使用竖线    竖线数目<br>|    一个竖线: &amp; # 1 2 4 ;<br>||    两个竖线: &amp; # 1 2 4 ; &amp; # 1 2 4 ;</p>
+<h2 id="1-14-文本居中引用"><a href="#1-14-文本居中引用" class="headerlink" title="1.14 文本居中引用"></a>1.14 文本居中引用</h2><p>复制</p>
+<pre><code>{% cq %}人生乃是一面镜子，从镜子里认识自己，我要称之为头等大事，也只是我们追求的目的！{% endcq %}</code></pre><p>以上标记显示效果如下：</p>
+<blockquote>
+<p>人生乃是一面镜子，<br>从镜子里认识自己，<br>我要称之为头等大事，<br>也只是我们追求的目的！</p>
+</blockquote>
+<p>注：如果想修改字号，可以如下面这样设置：</p>
+<p>复制</p>
+<pre><code>&lt;font size="4"&gt;{% cq %}  人生乃是一面镜子，  从镜子里认识自己，  我要称之为头等大事，  也只是我们追求的目的！{% endcq %}&lt;/font&gt;</code></pre><p>以上标记显示效果如下：</p>
+<p>人生乃是一面镜子，<br>从镜子里认识自己，<br>我要称之为头等大事，<br>也只是我们追求的目的！</p>
+<p>复制</p>
+<pre><code>&lt;div class="note default"&gt;&lt;p&gt;default&lt;/p&gt;&lt;/div&gt;</code></pre><p>以上标记显示效果如下：</p>
+<p>default</p>
+<p>复制</p>
+<pre><code>&lt;div class="note primary"&gt;&lt;p&gt;primary&lt;/p&gt;&lt;/div&gt;</code></pre><p>以上标记显示效果如下：</p>
+<p>primary</p>
+<p>复制</p>
+<pre><code>&lt;div class="note success"&gt;&lt;p&gt;success&lt;/p&gt;&lt;/div&gt;</code></pre><p>以上标记显示效果如下：</p>
+<p>success</p>
+<p>复制</p>
+<pre><code>&lt;div class="note warning"&gt;&lt;p&gt;warning&lt;/p&gt;&lt;/div&gt;</code></pre><p>以上标记显示效果如下：</p>
+<p>warning</p>
+<p>复制</p>
+<pre><code>&lt;div class="note danger"&gt;&lt;p&gt;danger&lt;/p&gt;&lt;/div&gt;</code></pre><p>以上标记显示效果如下：</p>
+<p>danger</p>
+<p>在<code>主题配置文件</code>中需要配置下:</p>
+<p>复制</p>
+<pre><code># Note tag (bs-callout).note:  # 风格  style: flat  # 要不要图标  icons: true  # 圆角矩形  border_radius: 3  light_bg_offset: 0</code></pre><h2 id="1-16-文字处理"><a href="#1-16-文字处理" class="headerlink" title="1.16 文字处理"></a>1.16 文字处理</h2><h3 id="1-16-1-文字背景色"><a href="#1-16-1-文字背景色" class="headerlink" title="1.16.1 文字背景色"></a>1.16.1 文字背景色</h3><p>复制</p>
+<pre><code>&lt;table&gt;&lt;tr&gt;&lt;td bgcolor=#FFFF00&gt;背景色的设置是按照十六进制颜色值：#FFFF00&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;table&gt;&lt;tr&gt;&lt;td bgcolor=#D1EEEE&gt;背景色的设置是按照十六进制颜色值：#D1EEEE&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;table&gt;&lt;tr&gt;&lt;td bgcolor=#C0FF3E&gt;背景色的设置是按照十六进制颜色值：#C0FF3E&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;table&gt;&lt;tr&gt;&lt;td bgcolor=#54FF9F&gt;背景色的设置是按照十六进制颜色值：#54FF9F&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</code></pre><p>效果如下：</p>
+<h3 id="1-16-2-文字字体"><a href="#1-16-2-文字字体" class="headerlink" title="1.16.2 文字字体"></a>1.16.2 文字字体</h3><p>复制</p>
+<pre><code>&lt;font face="黑体"&gt;我是黑体字&lt;/font&gt;&lt;font face="宋体"&gt;我是宋体字&lt;/font&gt;&lt;font face="微软雅黑"&gt;我是微软雅黑字&lt;/font&gt;</code></pre><p>效果如下：</p>
+<p>我是黑体字<br>我是宋体字<br>我是微软雅黑字</p>
+<h3 id="1-16-3-文字大小"><a href="#1-16-3-文字大小" class="headerlink" title="1.16.3 文字大小"></a>1.16.3 文字大小</h3><p>复制</p>
+<pre><code>size为1：&lt;font size="1"&gt;size为1&lt;/font&gt;size为2：&lt;font size="2"&gt;size为2&lt;/font&gt;size为3：&lt;font size="3"&gt;size为3&lt;/font&gt;size为4：&lt;font size="4"&gt;size为4&lt;/font&gt;size为10：&lt;font size="10"&gt;size为10&lt;/font&gt;</code></pre><p>效果如下：</p>
+<p>size为1：size为1<br>size为2：size为2<br>size为3：size为3<br>size为4：size为4<br>size为10：size为10</p>
+<h3 id="1-16-4-文字颜色"><a href="#1-16-4-文字颜色" class="headerlink" title="1.16.4 文字颜色"></a>1.16.4 文字颜色</h3><p>复制</p>
+<pre><code>红色文字：&lt;font color="red"&gt;红色文字&lt;/font&gt;浅红色文字：&lt;font color="#dd0000"&gt;浅红色文字&lt;/font&gt; 蓝色文字：&lt;font color="blue"&gt;蓝色文字&lt;/font&gt;浅蓝色文字：&lt;font color="#0000dd"&gt;浅蓝色文字&lt;/font&gt;绿色文字：&lt;font color="green"&gt;绿色文字&lt;/font&gt;金黄色文字：&lt;font color="#FFFF00"&gt;金黄色文字&lt;/font&gt;浅黄色文字：&lt;font color="#dddd00"&gt;浅黄色文字&lt;/font&gt; 深黄色文字：&lt;font color="#666600"&gt;深黄色文字&lt;/font&gt;</code></pre><p>效果如下：</p>
+<p>红色文字：红色文字<br>浅红色文字：浅红色文字<br>蓝色文字：蓝色文字<br>浅蓝色文字：浅蓝色文字<br>绿色文字：绿色文字<br>金黄色文字：金黄色文字<br>浅黄色文字：浅黄色文字<br>深黄色文字：深黄色文字</p>
+<p>需要其它更多的颜色，可以到下面这个网址查更多颜色的 RGB，或者直接用颜色的英文代替 RGB<br><a href="http://www.114la.com/other/rgb.htm" target="_blank" rel="noopener">RGB颜色查询对照表</a></p>
+<h3 id="1-16-4-同时改变字体，字号和颜色"><a href="#1-16-4-同时改变字体，字号和颜色" class="headerlink" title="1.16.4 同时改变字体，字号和颜色"></a>1.16.4 同时改变字体，字号和颜色</h3><p>复制</p>
+<pre><code>&lt;font face="字体" size="字号" color="颜色"&gt;这里是需要突出显示的内容&lt;/font&gt;&lt;font face="黑体"&gt;我是黑体字&lt;/font&gt;&lt;font face="微软雅黑"&gt;我是微软雅黑&lt;/font&gt;&lt;font face="STCAIYUN"&gt;我是华文彩云&lt;/font&gt;&lt;font color=red&gt;我是红色&lt;/font&gt;&lt;font color=#008000&gt;我是绿色&lt;/font&gt;&lt;font color=Blue&gt;我是蓝色&lt;/font&gt;&lt;font size=5&gt;我是尺寸&lt;/font&gt;&lt;font face="黑体" color=green size=5&gt;我是黑体，绿色，尺寸为5&lt;/font&gt;</code></pre><p>效果如下：</p>
+<p>这里是需要突出显示的内容<br>我是黑体字<br>我是微软雅黑<br>我是华文彩云<br>我是红色<br>我是绿色<br>我是蓝色<br>我是尺寸<br>我是黑体，绿色，尺寸为5</p>
+<h2 id="1-17-使用Emoji表情"><a href="#1-17-使用Emoji表情" class="headerlink" title="1.17 使用Emoji表情"></a>1.17 使用Emoji表情</h2><p>使用前首先要开启 <code>emoji</code>，默认是不显示的，参考：<a href="https://blog.enjoytoshare.club/article/hexo-do-optimization.html#3-27-开启emoji表情" target="_blank" rel="noopener">开启emoji表情</a><br>开启 <code>emoji</code> 后进行操作</p>
+<p>举例：</p>
+<p>复制</p>
+<pre><code>Hello Hexo NexT :smile:</code></pre><p>效果：</p>
+<p>Hello Hexo NexT 😄</p>
+<p>更多可用 Emoji 代码参见 <a href="https://www.webfx.com/tools/emoji-cheat-sheet/" target="_blank" rel="noopener">emoji-cheat-sheet</a> 和 <a href="https://www.emojicopy.com/" target="_blank" rel="noopener">emojicopy</a></p>
+<h2 id="1-18-复选框列表-github可用-hexo不支持"><a href="#1-18-复选框列表-github可用-hexo不支持" class="headerlink" title="1.18 复选框列表(github可用,hexo不支持)"></a>1.18 复选框列表(github可用,hexo不支持)</h2><p>在列表符号后面加上 <code>[x]</code> 或者 <code>[ ]</code> 代表<code>选中</code>或者<code>未选中</code>情况</p>
+<p>复制</p>
+<pre><code>- [ ] content -空格[空格]空格content 解释: [ ]括号里面的空格可以换成[x],代表选中对话框</code></pre><ul>
+<li><input checked="" disabled="" type="checkbox"> C</li>
+<li><input checked="" disabled="" type="checkbox"> C++</li>
+<li><input checked="" disabled="" type="checkbox"> Java</li>
+<li><input checked="" disabled="" type="checkbox"> Qt</li>
+<li><input checked="" disabled="" type="checkbox"> Android</li>
+<li><input disabled="" type="checkbox"> C#</li>
+<li><input disabled="" type="checkbox"> .NET</li>
+</ul>
+<h2 id="1-19-脚注"><a href="#1-19-脚注" class="headerlink" title="1.19 脚注"></a>1.19 脚注</h2><p>使用 <code>[^1]</code> <code>[^1]:</code>的脚注对来表示</p>
+<p>复制</p>
+<pre><code>Here is a footnote reference,[^1] and another.[^longnote][^1]: Here is the footnote.[^longnote]: Here's one with multiple blocks.    Subsequent paragraphs are indented to show that they    belong to the previous footnote.</code></pre><p>效果如下：</p>
+<p>Here is a footnote reference,<a href="https://blog.enjoytoshare.club/article/hexo-do-optimization-markdown.html#fn1" target="_blank" rel="noopener">[1]</a> and another.<a href="https://blog.enjoytoshare.club/article/hexo-do-optimization-markdown.html#fn2" target="_blank" rel="noopener">[2]</a></p>
+<h1 id="2-文章编辑"><a href="#2-文章编辑" class="headerlink" title="2 文章编辑"></a>2 文章编辑</h1><h2 id="2-1-文章配置"><a href="#2-1-文章配置" class="headerlink" title="2.1 文章配置"></a>2.1 文章配置</h2><p>在<code>hexo</code>文件夹下右键点击<code>Git Bash here</code>后键入<code>$hexo new page "name"</code>，<code>source/_post</code> 文件夹中就会生成<code>name.md</code>文件，打开后即可编辑，编辑格式如下：</p>
+<p>复制</p>
+<pre><code>---title: 文章名date: 2019-04-09 12:27:52     //发表日期updated: 2019-04-09 13:27:52  //更新日期categories: Markdown          //文章分类tags: [tag1,tag2]             //文章标签，多标签时使用英文逗号隔开photos:                       //如果使用Fancybox（文章头部展示图片），如此设置                                //注意冒号后面有空格---</code></pre><h2 id="2-2-文章折叠"><a href="#2-2-文章折叠" class="headerlink" title="2.2 文章折叠"></a>2.2 文章折叠</h2><p>在要显示的文字末尾添加如下代码实现文章在主页的折叠显示。</p>
+<p>复制</p>
+<pre><code>&lt;!-- more --&gt;</code></pre><hr>
+<ol>
+<li>Here is the footnote. <a href="https://blog.enjoytoshare.club/article/hexo-do-optimization-markdown.html#fnref1" target="_blank" rel="noopener">↩</a></li>
+<li>Here’s one with multiple blocks.<br>Subsequent paragraphs are indented to show that they<br>belong to the previous footnote. <a href="https://blog.enjoytoshare.club/article/hexo-do-optimization-markdown.html#fnref2" target="_blank" rel="noopener">↩</a></li>
+</ol>
+<blockquote>
+<p><a href="https://blog.enjoytoshare.club/article/hexo-do-optimization-markdown.html" target="_blank" rel="noopener">原文</a></p>
+</blockquote>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+            
+            
+            <div class="reprint1">
+                <p>
+                    <span class="reprint1-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="https://918q.top" class="b-link-green">Asz的博客</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2019/09/15/hexo-zhong-markdown-yu-fa-gfm-shi-yong/" class="b-link-green">Hexo中Markdown语法(GFM)使用</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+    /* valine 评论框增加背景图片 */
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("") 100% 100% no-repeat;
+    }
+
+    #vcomments input[type=text],
+    #vcomments input[type=email],
+    #vcomments input[type=url],
+    #vcomments textarea {
+        box-sizing: border-box;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    /* 修复评论第一行位置错位 */
+    .v .vlist .vcard {
+    padding-top: 2.5em !important ;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<!-- <link rel="stylesheet" type="text/css" href="/libs//libs/jQuery-emoji/dist/css/jquery.emoji.css">
+<script src="/libs//libs/jQuery-emoji/dist/js/jquery.emoji.min.js"></script>
+<script src="/libs//libs/jQuery-emoji/dist/js/emoji.list.js"></script> -->
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'j17miAOpnIUtYQi0rwa5ic4p-gzGzoHsz',
+        appKey: 'wdF6SeCRaaiJEE5uhjuS7TBk',
+        notify: 'true' === 'true',
+        verify: 'true' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go',
+
+    });
+
+//     function parse_emoji() {
+//     jQuery(".vcontent").emojiParse({
+//       basePath: '/libs/jQuery-emoji/images/emoji',
+//       icons: emojiLists   // 注：详见 js/emoji.list.js
+//     });
+//   }
+  
+//   setTimeout(function() {
+//     // jQuery emoji 解析
+//     parse_emoji();
+//     // jquery emoji 初始化
+//     jQuery(".veditor").emoji({
+//       showTab: true,
+//       animation: 'slide',
+//       basePath: '/libs/jQuery-emoji/images/emoji',
+//       icons: emojiLists  // 注：详见 js/emoji.list.js
+//     });
+//     jQuery(".vmore").on("click", function() {
+//       setTimeout(function() {
+//         parse_emoji();
+//       }, 500);
+//     });
+//   }, 800)
+
+</script>
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/09/16/trick-linux-auditd-shen-ji-gong-ju/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="TRICK: Linux Auditd审计工具">
+                        
+                        <span class="card-title">TRICK: Linux Auditd审计工具</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            前言最近我的网站首页被挂搜索引擎劫持了，输入域名打开正常。通过site:域名，发现网站被劫持了。然后想起key大佬有篇文章好像有类似的工具，如下全搬过来了。
+背景难题：/home/chen/test/目录下的index.html为首页文件，
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-16
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/审计/" class="post-category" target="_blank">
+                                    审计
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Linux-审计/" target="_blank">
+                        <span class="chip bg-color">Linux 审计</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/09/12/ru-he-yong-ps-qu-diao-hai-bao-tu-pian-shang-de-fu-za-wen-zi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="如何用PS去掉海报图片上的复杂文字">
+                        
+                        <span class="card-title">如何用PS去掉海报图片上的复杂文字</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            淘宝开店装修的过程中，经常要做的就是图片设计，有时候遇到心意的海报，非常喜欢但有部分文字需要去掉，一般设计好的海报，文字想要通过某个工具或者快捷键直接去掉的可能性不大，大都需要多个工具的配合使用，下面分享一个案例，面向新手开店卖家，通过简单
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-12
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/PS/" class="post-category" target="_blank">
+                                    PS
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/PS/" target="_blank">
+                        <span class="chip bg-color">PS</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Asz的博客<br />'
+            + '作者: Asz<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+        <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&copy; 2019 Asz <span class="with-love" id="heart"><i class="fa fa-heart" style="color:#ff71a8;"></i></span>鲁ICP备19035615号-2
+            <br>
+            <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
+            <br>
+
+            
+
+            
+                    
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+			<i class="fa fa-heart-o"></i>
+                        本站总访问量: <span id="busuanzi_value_site_pv" class="white-color"></span>
+                    
+        
+                    
+                        <span id="busuanzi_container_site_uv" style='display:none'></span>
+                        人次&nbsp; | &nbsp;访客人数: <span id="busuanzi_value_site_uv" class="white-color"></span> 人
+                    
+    
+            
+
+            
+                &nbsp; | &nbsp;字数统计:&nbsp;
+                <span class="white-color">35k</span> 字
+            
+
+            
+            <br>
+
+        </div>
+
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/cscwdxgg" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+ 
+    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=3233397204@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=3233397204&site=qq&menu=yes" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+
+        var t1 = Date.UTC(2019, 07, 30, 00, 00, 00); //北京时间2019-8-1 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes *
+            minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已勉强运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
+            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒" ;
+    } /*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+
+
+
+
+
+        <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+        <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+        <script src="/libs/materialize/materialize.min.js"></script>
+        <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+        <script src="/libs/aos/aos.js"></script>
+        <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+        <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+        <script src="/js/matery.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+        
+            <script src="/libs/others/clicklove.js"></script>
+        
+
+        
+            <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+        
+
+        <!-- 洪卫 shw2018 add 2019.08.28 -->
+        <script type="text/javascript">
+            var OriginTitile = document.title,
+                st;
+            document.addEventListener("visibilitychange", function () {
+                document.hidden ? (document.title = "看不见我🙈~看不见我🙈~", clearTimeout(st)) : (document.title =
+                    "(๑•̀ㅂ•́) ✧被发现了～", st = setTimeout(function () {
+                        document.title = OriginTitile
+                    }, 3e3))
+            })
+        </script>
+	<!-- 天气接口控件 Asz add 2020/04/18 -->
+	<style type="text/css">
+	#weather-float-he {
+	 position: absolute;
+	 z-index: 9999;
+	 padding: 0px;
+	 top: 8px;
+	left: 8px;
+	}
+	</style>
+	
+		<script type="text/javascript">
+		WIDGET = {FID: '2cKE5vvuJ9'}
+		</script>
+		<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+	
+
+        <!-- 鼠标点击烟花爆炸效果  洪卫 shw2018 add 2019.09.09 -->
+        
+
+        <!-- 背景樱花飘落特效洪卫 shw2018 add 2019.09.10 -->
+        
+            <script type="text/javascript">
+            //只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+            }
+            </script>
+        
+
+        <!-- 鼠标点击文字特效 洪卫 shw2018 add 2019.09.10-->
+        
+            <script src="/js/wenzi.js" type="text/javascript"></script>
+        
+
+        <!-- 背景雪花飘落特效 洪卫 shw2018 add 2019.09.10 -->
+        
+
+        <!-- 在线聊天工具  洪卫 shw2018 add 2019.09.11 -->
+       
+
+        <!-- 背景 canvas-nest  洪卫 shw 2018  add 2019.09.15-->
+        
+
+        <!-- 背景静止彩带  洪卫 shw 2018  add 2019.09.15-->
+        
+
+        <!-- 背景动态彩带 洪卫 shw 2018  add 2019.09.15-->
+        
+
+    <script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+</html>

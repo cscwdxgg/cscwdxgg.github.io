@@ -1,0 +1,3037 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    <!-- shw2018 洪卫  modify 2019.08.15-->
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="linux常见端口, linux，lnmp，php，python，html">
+    <meta name="baidu-site-verification" content="fmlEuI34ir">
+    <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
+    <meta name="description" content="下面的表格中列举了包括在红帽企业 Linux 中的服务、守护进程、和程序所使用的最常见的通信端口。该列表还可以在 /etc/services 文件中找到。要查看由互联网号码分派局（IANA）制定的“著名的已注册动态端口”官方列表。
+
+
+
+
+">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>linux常见端口 | Asz的博客</title>
+    <!--<link rel="icon" type="image/png" href="/favicon.png">-->
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+    
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+    <body>
+
+        <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <span class="logo-span">Asz的博客</span>
+                </a>
+            </div>
+            
+
+
+<!-- <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/AV" class="waves-effect waves-light">
+            
+            <i class="fa fa-music"></i>
+            
+            <span>视听</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于我</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <i class="fa fa-envelope"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/navi" class="waves-effect waves-light">
+            
+            <i class="fa fa-rocket"></i>
+            
+            <span>快捷导航</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul> -->
+
+<!-- 支持二级菜单特性 洪卫 shw2018 modify 2019.09.17  -->
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/" class="waves-effect waves-light">
+              
+                <i class="fa fa-home"></i>
+              
+              <span>首页</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+              <a href="/archives" class="waves-effect waves-light">
+                
+                  <i class="fa fa-archive"></i>
+                
+                <span>归档</span>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+              </a>
+
+            <ul class="sub-nav menus_item_child ">
+              
+                <li> 
+                  <a href="/categories" >
+                    
+                      <i class="fa fa-bookmark" style="margin-top: -20px;"></i>
+                    
+                    <span>分类</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+              <a href="/AV" class="waves-effect waves-light">
+                
+                  <i class="fa fa-music"></i>
+                
+                <span>视听</span>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+              </a>
+
+            <ul class="sub-nav menus_item_child ">
+              
+                <li> 
+                  <a href="/galleries" >
+                    
+                      <i class="fa fa-photo" style="margin-top: -20px;"></i>
+                    
+                    <span>图片</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/about" class="waves-effect waves-light">
+              
+                <i class="fa fa-user-circle-o"></i>
+              
+              <span>关于我</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/contact" class="waves-effect waves-light">
+              
+                <i class="fa fa-envelope"></i>
+              
+              <span>留言板</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/friends" class="waves-effect waves-light">
+              
+                <i class="fa fa-address-book"></i>
+              
+              <span>友情链接</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/navi" class="waves-effect waves-light">
+              
+                <i class="fa fa-rocket"></i>
+              
+              <span>快捷导航</span>
+            </a>
+
+            
+      </li>
+    
+
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <div class="logo-name">Asz的博客</div>
+        <div class="logo-desc">
+            
+            莱芜职业技术学院 | 机电一体化
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/AV" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-music"></i>
+                
+                视听
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于我
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-envelope"></i>
+                
+                留言板
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        <li>
+            <a href="/navi" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-rocket"></i>
+                
+                快捷导航
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/cscwdxgg" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+   
+   
+<!-- 支持二级菜单特性 洪卫 shw2018 modify 2019.09.17  -->
+<!-- <ul class="menu-list mobile-menu-list">
+    
+        <li class="m-nav-item">
+                
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-home"></i>
+                        
+                        首页
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="javascript:;">
+                            
+                            <i class="fa fa-fw fa-archive"></i>
+                            
+                            归档
+                            <span class="m-icon"><i class="fa fa-chevron-right"></i></span>
+                    </a>
+                <ul>
+                  
+                    <li> 
+                      <a href="/categories" >
+                           
+                            <i class="fa fa-bookmark" style="left: 18px; position: absolute;"></i>
+                       
+                       <span>分类</span>
+                      </a>
+                    </li>
+                   
+                </ul>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="javascript:;">
+                            
+                            <i class="fa fa-fw fa-music"></i>
+                            
+                            视听
+                            <span class="m-icon"><i class="fa fa-chevron-right"></i></span>
+                    </a>
+                <ul>
+                  
+                    <li> 
+                      <a href="/galleries" >
+                           
+                            <i class="fa fa-photo" style="left: 18px; position: absolute;"></i>
+                       
+                       <span>图片</span>
+                      </a>
+                    </li>
+                   
+                </ul>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/about" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-user-circle-o"></i>
+                        
+                        关于我
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/contact" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-envelope"></i>
+                        
+                        留言板
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/friends" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-address-book"></i>
+                        
+                        友情链接
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/navi" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-rocket"></i>
+                        
+                        快捷导航
+                    </a>
+              
+            </li>
+        
+
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/cscwdxgg" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul> -->
+
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/cscwdxgg" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+        
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        linux常见端口
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- shw2018 洪卫  modify 2019.08.15-->
+<!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/linux端口/" target="_blank">
+                                <span class="chip bg-color">linux端口</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/linux入门/" class="post-category" target="_blank">
+                                linux入门
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-09-20
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                        Asz
+                    
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        4k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        16 分
+                    </div>
+                    
+                
+                
+                
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv" ></span>
+    
+                
+
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>下面的表格中列举了包括在红帽企业 Linux 中的服务、守护进程、和程序所使用的最常见的通信端口。该列表还可以在 <code>/etc/services</code> 文件中找到。要查看由互联网号码分派局（IANA）制定的“著名的已注册动态端口”官方列表。</p>
+<table>
+<thead>
+<tr>
+<th><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="http://cert.sjtu.edu.cn/doc/linux/stylesheet-images/note.png" alt="注记"></th>
+<th><strong>注记</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>“<code>*层*</code>”是指服务或协议在交通层上使用 TCP 还是 UDP。若没有列举，这个服务或协议就两者都使用。</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>端口号码 / 层</th>
+<th>名称</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>tcpmux</td>
+<td>TCP 端口服务多路复用</td>
+</tr>
+<tr>
+<td>5</td>
+<td>rje</td>
+<td>远程作业入口</td>
+</tr>
+<tr>
+<td>7</td>
+<td>echo</td>
+<td>Echo 服务</td>
+</tr>
+<tr>
+<td>9</td>
+<td>discard</td>
+<td>用于连接测试的空服务</td>
+</tr>
+<tr>
+<td>11</td>
+<td>systat</td>
+<td>用于列举连接了的端口的系统状态</td>
+</tr>
+<tr>
+<td>13</td>
+<td>daytime</td>
+<td>给请求主机发送日期和时间</td>
+</tr>
+<tr>
+<td>17</td>
+<td>qotd</td>
+<td>给连接了的主机发送每日格言</td>
+</tr>
+<tr>
+<td>18</td>
+<td>msp</td>
+<td>消息发送协议</td>
+</tr>
+<tr>
+<td>19</td>
+<td>chargen</td>
+<td>字符生成服务；发送无止境的字符流</td>
+</tr>
+<tr>
+<td>20</td>
+<td>ftp-data</td>
+<td>FTP 数据端口</td>
+</tr>
+<tr>
+<td>21</td>
+<td>ftp</td>
+<td>文件传输协议（FTP）端口；有时被文件服务协议（FSP）使用</td>
+</tr>
+<tr>
+<td>22</td>
+<td>ssh</td>
+<td>安全 Shell（SSH）服务</td>
+</tr>
+<tr>
+<td>23</td>
+<td>telnet</td>
+<td>Telnet 服务</td>
+</tr>
+<tr>
+<td>25</td>
+<td>smtp</td>
+<td>简单邮件传输协议（SMTP）</td>
+</tr>
+<tr>
+<td>37</td>
+<td>time</td>
+<td>时间协议</td>
+</tr>
+<tr>
+<td>39</td>
+<td>rlp</td>
+<td>资源定位协议</td>
+</tr>
+<tr>
+<td>42</td>
+<td>nameserver</td>
+<td>互联网名称服务</td>
+</tr>
+<tr>
+<td>43</td>
+<td>nicname</td>
+<td>WHOIS 目录服务</td>
+</tr>
+<tr>
+<td>49</td>
+<td>tacacs</td>
+<td>用于基于 TCP/IP 验证和访问的终端访问控制器访问控制系统</td>
+</tr>
+<tr>
+<td>50</td>
+<td>re-mail-ck</td>
+<td>远程邮件检查协议</td>
+</tr>
+<tr>
+<td>53</td>
+<td>domain</td>
+<td>域名服务（如 BIND）</td>
+</tr>
+<tr>
+<td>63</td>
+<td>whois++</td>
+<td>WHOIS++，被扩展了的 WHOIS 服务</td>
+</tr>
+<tr>
+<td>67</td>
+<td>bootps</td>
+<td>引导协议（BOOTP）服务；还被动态主机配置协议（DHCP）服务使用</td>
+</tr>
+<tr>
+<td>68</td>
+<td>bootpc</td>
+<td>Bootstrap（BOOTP）客户；还被动态主机配置协议（DHCP）客户使用</td>
+</tr>
+<tr>
+<td>69</td>
+<td>tftp</td>
+<td>小文件传输协议（TFTP）</td>
+</tr>
+<tr>
+<td>70</td>
+<td>gopher</td>
+<td>Gopher 互联网文档搜寻和检索</td>
+</tr>
+<tr>
+<td>71</td>
+<td>netrjs-1</td>
+<td>远程作业服务</td>
+</tr>
+<tr>
+<td>72</td>
+<td>netrjs-2</td>
+<td>远程作业服务</td>
+</tr>
+<tr>
+<td>73</td>
+<td>netrjs-3</td>
+<td>远程作业服务</td>
+</tr>
+<tr>
+<td>73</td>
+<td>netrjs-4</td>
+<td>远程作业服务</td>
+</tr>
+<tr>
+<td>79</td>
+<td>finger</td>
+<td>用于用户联系信息的 Finger 服务</td>
+</tr>
+<tr>
+<td>80</td>
+<td>http</td>
+<td>用于万维网（WWW）服务的超文本传输协议（HTTP）</td>
+</tr>
+<tr>
+<td>88</td>
+<td>kerberos</td>
+<td>Kerberos 网络验证系统</td>
+</tr>
+<tr>
+<td>95</td>
+<td>supdup</td>
+<td>Telnet 协议扩展</td>
+</tr>
+<tr>
+<td>101</td>
+<td>hostname</td>
+<td>SRI-NIC 机器上的主机名服务</td>
+</tr>
+<tr>
+<td>102</td>
+<td>iso-tsap</td>
+<td>ISO 开发环境（ISODE）网络应用</td>
+</tr>
+<tr>
+<td>105</td>
+<td>csnet-ns</td>
+<td>邮箱名称服务器；也被 CSO 名称服务器使用</td>
+</tr>
+<tr>
+<td>107</td>
+<td>rtelnet</td>
+<td>远程 Telnet</td>
+</tr>
+<tr>
+<td>109</td>
+<td>pop2</td>
+<td>邮局协议版本2</td>
+</tr>
+<tr>
+<td>110</td>
+<td>pop3</td>
+<td>邮局协议版本3</td>
+</tr>
+<tr>
+<td>111</td>
+<td>sunrpc</td>
+<td>用于远程命令执行的远程过程调用（RPC）协议，被网络文件系统（NFS）使用</td>
+</tr>
+<tr>
+<td>113</td>
+<td>auth</td>
+<td>验证和身份识别协议</td>
+</tr>
+<tr>
+<td>115</td>
+<td>sftp</td>
+<td>安全文件传输协议（SFTP）服务</td>
+</tr>
+<tr>
+<td>117</td>
+<td>uucp-path</td>
+<td>Unix 到 Unix 复制协议（UUCP）路径服务</td>
+</tr>
+<tr>
+<td>119</td>
+<td>nntp</td>
+<td>用于 USENET 讨论系统的网络新闻传输协议（NNTP）</td>
+</tr>
+<tr>
+<td>123</td>
+<td>ntp</td>
+<td>网络时间协议（NTP）</td>
+</tr>
+<tr>
+<td>137</td>
+<td>netbios-ns</td>
+<td>在红帽企业 Linux 中被 Samba 使用的 NETBIOS 名称服务</td>
+</tr>
+<tr>
+<td>138</td>
+<td>netbios-dgm</td>
+<td>在红帽企业 Linux 中被 Samba 使用的 NETBIOS 数据报服务</td>
+</tr>
+<tr>
+<td>139</td>
+<td>netbios-ssn</td>
+<td>在红帽企业 Linux 中被 Samba 使用的NET BIOS 会话服务</td>
+</tr>
+<tr>
+<td>143</td>
+<td>imap</td>
+<td>互联网消息存取协议（IMAP）</td>
+</tr>
+<tr>
+<td>161</td>
+<td>snmp</td>
+<td>简单网络管理协议（SNMP）</td>
+</tr>
+<tr>
+<td>162</td>
+<td>snmptrap</td>
+<td>SNMP 的陷阱</td>
+</tr>
+<tr>
+<td>163</td>
+<td>cmip-man</td>
+<td>通用管理信息协议（CMIP）</td>
+</tr>
+<tr>
+<td>164</td>
+<td>cmip-agent</td>
+<td>通用管理信息协议（CMIP）</td>
+</tr>
+<tr>
+<td>174</td>
+<td>mailq</td>
+<td>MAILQ</td>
+</tr>
+<tr>
+<td>177</td>
+<td>xdmcp</td>
+<td>X 显示管理器控制协议</td>
+</tr>
+<tr>
+<td>178</td>
+<td>nextstep</td>
+<td>NeXTStep 窗口服务器</td>
+</tr>
+<tr>
+<td>179</td>
+<td>bgp</td>
+<td>边界网络协议</td>
+</tr>
+<tr>
+<td>191</td>
+<td>prospero</td>
+<td>Cliffod Neuman 的 Prospero 服务</td>
+</tr>
+<tr>
+<td>194</td>
+<td>irc</td>
+<td>互联网中继聊天（IRC）</td>
+</tr>
+<tr>
+<td>199</td>
+<td>smux</td>
+<td>SNMP UNIX 多路复用</td>
+</tr>
+<tr>
+<td>201</td>
+<td>at-rtmp</td>
+<td>AppleTalk 选路</td>
+</tr>
+<tr>
+<td>202</td>
+<td>at-nbp</td>
+<td>AppleTalk 名称绑定</td>
+</tr>
+<tr>
+<td>204</td>
+<td>at-echo</td>
+<td>AppleTalk echo 服务</td>
+</tr>
+<tr>
+<td>206</td>
+<td>at-zis</td>
+<td>AppleTalk 区块信息</td>
+</tr>
+<tr>
+<td>209</td>
+<td>qmtp</td>
+<td>快速邮件传输协议（QMTP）</td>
+</tr>
+<tr>
+<td>210</td>
+<td>z39.50</td>
+<td>NISO Z39.50 数据库</td>
+</tr>
+<tr>
+<td>213</td>
+<td>ipx</td>
+<td>互联网络分组交换协议（IPX），被 Novell Netware 环境常用的数据报协议</td>
+</tr>
+<tr>
+<td>220</td>
+<td>imap3</td>
+<td>互联网消息存取协议版本3</td>
+</tr>
+<tr>
+<td>245</td>
+<td>link</td>
+<td>LINK</td>
+</tr>
+<tr>
+<td>347</td>
+<td>fatserv</td>
+<td>Fatmen 服务器</td>
+</tr>
+<tr>
+<td>363</td>
+<td>rsvp_tunnel</td>
+<td>RSVP 隧道</td>
+</tr>
+<tr>
+<td>369</td>
+<td>rpc2portmap</td>
+<td>Coda 文件系统端口映射器</td>
+</tr>
+<tr>
+<td>370</td>
+<td>codaauth2</td>
+<td>Coda 文件系统验证服务</td>
+</tr>
+<tr>
+<td>372</td>
+<td>ulistproc</td>
+<td>UNIX Listserv</td>
+</tr>
+<tr>
+<td>389</td>
+<td>ldap</td>
+<td>轻型目录存取协议（LDAP）</td>
+</tr>
+<tr>
+<td>427</td>
+<td>svrloc</td>
+<td>服务位置协议（SLP）</td>
+</tr>
+<tr>
+<td>434</td>
+<td>mobileip-agent</td>
+<td>可移互联网协议（IP）代理</td>
+</tr>
+<tr>
+<td>435</td>
+<td>mobilip-mn</td>
+<td>可移互联网协议（IP）管理器</td>
+</tr>
+<tr>
+<td>443</td>
+<td>https</td>
+<td>安全超文本传输协议（HTTP）</td>
+</tr>
+<tr>
+<td>444</td>
+<td>snpp</td>
+<td>小型网络分页协议</td>
+</tr>
+<tr>
+<td>445</td>
+<td>microsoft-ds</td>
+<td>通过 TCP/IP 的服务器消息块（SMB）</td>
+</tr>
+<tr>
+<td>464</td>
+<td>kpasswd</td>
+<td>Kerberos 口令和钥匙改换服务</td>
+</tr>
+<tr>
+<td>468</td>
+<td>photuris</td>
+<td>Photuris 会话钥匙管理协议</td>
+</tr>
+<tr>
+<td>487</td>
+<td>saft</td>
+<td>简单不对称文件传输（SAFT）协议</td>
+</tr>
+<tr>
+<td>488</td>
+<td>gss-http</td>
+<td>用于 HTTP 的通用安全服务（GSS）</td>
+</tr>
+<tr>
+<td>496</td>
+<td>pim-rp-disc</td>
+<td>用于协议独立的多址传播（PIM）服务的会合点发现（RP-DISC）</td>
+</tr>
+<tr>
+<td>500</td>
+<td>isakmp</td>
+<td>互联网安全关联和钥匙管理协议（ISAKMP）</td>
+</tr>
+<tr>
+<td>535</td>
+<td>iiop</td>
+<td>互联网内部对象请求代理协议（IIOP）</td>
+</tr>
+<tr>
+<td>538</td>
+<td>gdomap</td>
+<td>GNUstep 分布式对象映射器（GDOMAP）</td>
+</tr>
+<tr>
+<td>546</td>
+<td>dhcpv6-client</td>
+<td>动态主机配置协议（DHCP）版本6客户</td>
+</tr>
+<tr>
+<td>547</td>
+<td>dhcpv6-server</td>
+<td>动态主机配置协议（DHCP）版本6服务</td>
+</tr>
+<tr>
+<td>554</td>
+<td>rtsp</td>
+<td>实时流播协议（RTSP）</td>
+</tr>
+<tr>
+<td>563</td>
+<td>nntps</td>
+<td>通过安全套接字层的网络新闻传输协议（NNTPS）</td>
+</tr>
+<tr>
+<td>565</td>
+<td>whoami</td>
+<td>whoami</td>
+</tr>
+<tr>
+<td>587</td>
+<td>submission</td>
+<td>邮件消息提交代理（MSA）</td>
+</tr>
+<tr>
+<td>610</td>
+<td>npmp-local</td>
+<td>网络外设管理协议（NPMP）本地 / 分布式排队系统（DQS）</td>
+</tr>
+<tr>
+<td>611</td>
+<td>npmp-gui</td>
+<td>网络外设管理协议（NPMP）GUI / 分布式排队系统（DQS）</td>
+</tr>
+<tr>
+<td>612</td>
+<td>hmmp-ind</td>
+<td>HMMP 指示 / DQS</td>
+</tr>
+<tr>
+<td>631</td>
+<td>ipp</td>
+<td>互联网打印协议（IPP）</td>
+</tr>
+<tr>
+<td>636</td>
+<td>ldaps</td>
+<td>通过安全套接字层的轻型目录访问协议（LDAPS）</td>
+</tr>
+<tr>
+<td>674</td>
+<td>acap</td>
+<td>应用程序配置存取协议（ACAP）</td>
+</tr>
+<tr>
+<td>694</td>
+<td>ha-cluster</td>
+<td>用于带有高可用性的群集的心跳服务</td>
+</tr>
+<tr>
+<td>749</td>
+<td>kerberos-adm</td>
+<td>Kerberos 版本5（v5）的“kadmin”数据库管理</td>
+</tr>
+<tr>
+<td>750</td>
+<td>kerberos-iv</td>
+<td>Kerberos 版本4（v4）服务</td>
+</tr>
+<tr>
+<td>765</td>
+<td>webster</td>
+<td>网络词典</td>
+</tr>
+<tr>
+<td>767</td>
+<td>phonebook</td>
+<td>网络电话簿</td>
+</tr>
+<tr>
+<td>873</td>
+<td>rsync</td>
+<td>rsync 文件传输服务</td>
+</tr>
+<tr>
+<td>992</td>
+<td>telnets</td>
+<td>通过安全套接字层的 Telnet（TelnetS）</td>
+</tr>
+<tr>
+<td>993</td>
+<td>imaps</td>
+<td>通过安全套接字层的互联网消息存取协议（IMAPS）</td>
+</tr>
+<tr>
+<td>994</td>
+<td>ircs</td>
+<td>通过安全套接字层的互联网中继聊天（IRCS）</td>
+</tr>
+<tr>
+<td>995</td>
+<td>pop3s</td>
+<td>通过安全套接字层的邮局协议版本3（POPS3）</td>
+</tr>
+</tbody></table>
+<p><strong>表 C-1. 著名端口</strong></p>
+<p>以下端口是 UNIX 特有的，涉及了从电子邮件到验证不等的服务。在方括号内的名称（如 [<code>*service*</code>]）是服务的守护进程名称或它的常用别名。</p>
+<table>
+<thead>
+<tr>
+<th>端口号码 / 层</th>
+<th>名称</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>512/tcp</td>
+<td>exec</td>
+<td>用于对远程执行的进程进行验证</td>
+</tr>
+<tr>
+<td>512/udp</td>
+<td>biff [comsat]</td>
+<td>异步邮件客户（biff）和服务（comsat）</td>
+</tr>
+<tr>
+<td>513/tcp</td>
+<td>login</td>
+<td>远程登录（rlogin）</td>
+</tr>
+<tr>
+<td>513/udp</td>
+<td>who [whod]</td>
+<td>登录的用户列表</td>
+</tr>
+<tr>
+<td>514/tcp</td>
+<td>shell [cmd]</td>
+<td>不必登录的远程 shell（rshell）和远程复制（rcp）</td>
+</tr>
+<tr>
+<td>514/udp</td>
+<td>syslog</td>
+<td>UNIX 系统日志服务</td>
+</tr>
+<tr>
+<td>515</td>
+<td>printer [spooler]</td>
+<td>打印机（lpr）假脱机</td>
+</tr>
+<tr>
+<td>517/udp</td>
+<td>talk</td>
+<td>远程对话服务和客户</td>
+</tr>
+<tr>
+<td>518/udp</td>
+<td>ntalk</td>
+<td>网络交谈（ntalk），远程对话服务和客户</td>
+</tr>
+<tr>
+<td>519</td>
+<td>utime [unixtime]</td>
+<td>UNIX 时间协议（utime）</td>
+</tr>
+<tr>
+<td>520/tcp</td>
+<td>efs</td>
+<td>扩展文件名服务器（EFS）</td>
+</tr>
+<tr>
+<td>520/udp</td>
+<td>router [route, routed]</td>
+<td>选路信息协议（RIP）</td>
+</tr>
+<tr>
+<td>521</td>
+<td>ripng</td>
+<td>用于互联网协议版本6（IPv6）的选路信息协议</td>
+</tr>
+<tr>
+<td>525</td>
+<td>timed [timeserver]</td>
+<td>时间守护进程（timed）</td>
+</tr>
+<tr>
+<td>526/tcp</td>
+<td>tempo [newdate]</td>
+<td>Tempo</td>
+</tr>
+<tr>
+<td>530/tcp</td>
+<td>courier [rpc]</td>
+<td>Courier 远程过程调用（RPC）协议</td>
+</tr>
+<tr>
+<td>531/tcp</td>
+<td>conference [chat]</td>
+<td>互联网中继聊天</td>
+</tr>
+<tr>
+<td>532</td>
+<td>netnews</td>
+<td>Netnews</td>
+</tr>
+<tr>
+<td>533/udp</td>
+<td>netwall</td>
+<td>用于紧急广播的 Netwall</td>
+</tr>
+<tr>
+<td>540/tcp</td>
+<td>uucp [uucpd]</td>
+<td>Unix 到 Unix 复制服务</td>
+</tr>
+<tr>
+<td>543/tcp</td>
+<td>klogin</td>
+<td>Kerberos 版本5（v5）远程登录</td>
+</tr>
+<tr>
+<td>544/tcp</td>
+<td>kshell</td>
+<td>Kerberos 版本5（v5）远程 shell</td>
+</tr>
+<tr>
+<td>548</td>
+<td>afpovertcp</td>
+<td>通过传输控制协议（TCP）的 Appletalk 文件编制协议（AFP）</td>
+</tr>
+<tr>
+<td>556</td>
+<td>remotefs [rfs_server, rfs]</td>
+<td>Brunhoff 的远程文件系统（RFS）</td>
+</tr>
+</tbody></table>
+<p><strong>表 C-2. UNIX 特有的端口</strong></p>
+<p><a href="http://cert.sjtu.edu.cn/doc/linux/ch-ports.html#TB-PORTS-REGGED" target="_blank" rel="noopener">表 C-3</a>列举了由网络和软件社区向 IANA 提交的要在端口号码列表中正式注册的端口。</p>
+<table>
+<thead>
+<tr>
+<th>端口号码 / 层</th>
+<th>名称</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1080</td>
+<td>socks</td>
+<td>SOCKS 网络应用程序代理服务</td>
+</tr>
+<tr>
+<td>1236</td>
+<td>bvcontrol [rmtcfg]</td>
+<td>Garcilis Packeten 远程配置服务器<a href="http://cert.sjtu.edu.cn/doc/linux/ch-ports.html#FTN.AEN5208" target="_blank" rel="noopener">[a]</a></td>
+</tr>
+<tr>
+<td>1300</td>
+<td>h323hostcallsc</td>
+<td>H.323 电话会议主机电话安全</td>
+</tr>
+<tr>
+<td>1433</td>
+<td>ms-sql-s</td>
+<td>Microsoft SQL 服务器</td>
+</tr>
+<tr>
+<td>1434</td>
+<td>ms-sql-m</td>
+<td>Microsoft SQL 监视器</td>
+</tr>
+<tr>
+<td>1494</td>
+<td>ica</td>
+<td>Citrix ICA 客户</td>
+</tr>
+<tr>
+<td>1512</td>
+<td>wins</td>
+<td>Microsoft Windows 互联网名称服务器</td>
+</tr>
+<tr>
+<td>1524</td>
+<td>ingreslock</td>
+<td>Ingres 数据库管理系统（DBMS）锁定服务</td>
+</tr>
+<tr>
+<td>1525</td>
+<td>prospero-np</td>
+<td>无特权的 Prospero</td>
+</tr>
+<tr>
+<td>1645</td>
+<td>datametrics [old-radius]</td>
+<td>Datametrics / 从前的 radius 项目</td>
+</tr>
+<tr>
+<td>1646</td>
+<td>sa-msg-port [oldradacct]</td>
+<td>sa-msg-port / 从前的 radacct 项目</td>
+</tr>
+<tr>
+<td>1649</td>
+<td>kermit</td>
+<td>Kermit 文件传输和管理服务</td>
+</tr>
+<tr>
+<td>1701</td>
+<td>l2tp [l2f]</td>
+<td>第2层隧道服务（LT2P） / 第2层转发（L2F）</td>
+</tr>
+<tr>
+<td>1718</td>
+<td>h323gatedisc</td>
+<td>H.323 电讯守门装置发现机制</td>
+</tr>
+<tr>
+<td>1719</td>
+<td>h323gatestat</td>
+<td>H.323 电讯守门装置状态</td>
+</tr>
+<tr>
+<td>1720</td>
+<td>h323hostcall</td>
+<td>H.323 电讯主持电话设置</td>
+</tr>
+<tr>
+<td>1758</td>
+<td>tftp-mcast</td>
+<td>小文件 FTP 组播</td>
+</tr>
+<tr>
+<td>1759</td>
+<td>mtftp</td>
+<td>组播小文件 FTP（MTFTP）</td>
+</tr>
+<tr>
+<td>1789</td>
+<td>hello</td>
+<td>Hello 路由器通信端口</td>
+</tr>
+<tr>
+<td>1812</td>
+<td>radius</td>
+<td>Radius 拨号验证和记帐服务</td>
+</tr>
+<tr>
+<td>1813</td>
+<td>radius-acct</td>
+<td>Radius 记帐</td>
+</tr>
+<tr>
+<td>1911</td>
+<td>mtp</td>
+<td>Starlight 网络多媒体传输协议（MTP）</td>
+</tr>
+<tr>
+<td>1985</td>
+<td>hsrp</td>
+<td>Cisco 热备用路由器协议</td>
+</tr>
+<tr>
+<td>1986</td>
+<td>licensedaemon</td>
+<td>Cisco 许可管理守护进程</td>
+</tr>
+<tr>
+<td>1997</td>
+<td>gdp-port</td>
+<td>Cisco 网关发现协议（GDP）</td>
+</tr>
+<tr>
+<td>2049</td>
+<td>nfs [nfsd]</td>
+<td>网络文件系统（NFS）</td>
+</tr>
+<tr>
+<td>2102</td>
+<td>zephyr-srv</td>
+<td>Zephyr 通知传输和发送服务器</td>
+</tr>
+<tr>
+<td>2103</td>
+<td>zephyr-clt</td>
+<td>Zephyr serv-hm 连接</td>
+</tr>
+<tr>
+<td>2104</td>
+<td>zephyr-hm</td>
+<td>Zephyr 主机管理器</td>
+</tr>
+<tr>
+<td>2401</td>
+<td>cvspserver</td>
+<td>并行版本系统（CVS）客户 / 服务器操作</td>
+</tr>
+<tr>
+<td>2430/tcp</td>
+<td>venus</td>
+<td>用于 Coda 文件系统（codacon 端口）的 Venus 缓存管理器</td>
+</tr>
+<tr>
+<td>2430/udp</td>
+<td>venus</td>
+<td>用于 Coda 文件系统（callback/wbc interface 界面）的 Venus 缓存管理器</td>
+</tr>
+<tr>
+<td>2431/tcp</td>
+<td>venus-se</td>
+<td>Venus 传输控制协议（TCP）的副作用</td>
+</tr>
+<tr>
+<td>2431/udp</td>
+<td>venus-se</td>
+<td>Venus 用户数据报协议（UDP）的副作用</td>
+</tr>
+<tr>
+<td>2432/udp</td>
+<td>codasrv</td>
+<td>Coda 文件系统服务器端口</td>
+</tr>
+<tr>
+<td>2433/tcp</td>
+<td>codasrv-se</td>
+<td>Coda 文件系统 TCP 副作用</td>
+</tr>
+<tr>
+<td>2433/udp</td>
+<td>codasrv-se</td>
+<td>Coda 文件系统 UDP SFTP 副作用</td>
+</tr>
+<tr>
+<td>2600</td>
+<td>hpstgmgr [zebrasrv]</td>
+<td>HPSTGMGR；Zebra 选路<a href="http://cert.sjtu.edu.cn/doc/linux/ch-ports.html#FTN.AEN5355" target="_blank" rel="noopener">[b]</a></td>
+</tr>
+<tr>
+<td>2601</td>
+<td>discp-client [zebra]</td>
+<td>discp 客户；Zebra 集成的 shell</td>
+</tr>
+<tr>
+<td>2602</td>
+<td>discp-server [ripd]</td>
+<td>discp 服务器；选路信息协议守护进程（ripd）</td>
+</tr>
+<tr>
+<td>2603</td>
+<td>servicemeter [ripngd]</td>
+<td>服务计量；用于 IPv6 的 RIP 守护进程</td>
+</tr>
+<tr>
+<td>2604</td>
+<td>nsc-ccs [ospfd]</td>
+<td>NSC CCS；开放式短路径优先守护进程（ospfd）</td>
+</tr>
+<tr>
+<td>2605</td>
+<td>nsc-posa</td>
+<td>NSC POSA；边界网络协议守护进程（bgpd）</td>
+</tr>
+<tr>
+<td>2606</td>
+<td>netmon [ospf6d]</td>
+<td>Dell Netmon；用于 IPv6 的 OSPF 守护进程（ospf6d）</td>
+</tr>
+<tr>
+<td>2809</td>
+<td>corbaloc</td>
+<td>公共对象请求代理体系（CORBA）命名服务定位器</td>
+</tr>
+<tr>
+<td>3130</td>
+<td>icpv2</td>
+<td>互联网缓存协议版本2（v2）；被 Squid 代理缓存服务器使用</td>
+</tr>
+<tr>
+<td>3306</td>
+<td>mysql</td>
+<td>MySQL 数据库服务</td>
+</tr>
+<tr>
+<td>3346</td>
+<td>trnsprntproxy</td>
+<td>Trnsprnt 代理</td>
+</tr>
+<tr>
+<td>4011</td>
+<td>pxe</td>
+<td>执行前环境（PXE）服务</td>
+</tr>
+<tr>
+<td>4321</td>
+<td>rwhois</td>
+<td>远程 Whois（rwhois）服务</td>
+</tr>
+<tr>
+<td>4444</td>
+<td>krb524</td>
+<td>Kerberos 版本5（v5）到版本4（v4）门票转换器</td>
+</tr>
+<tr>
+<td>5002</td>
+<td>rfe</td>
+<td>无射频以太网（RFE）音频广播系统</td>
+</tr>
+<tr>
+<td>5308</td>
+<td>cfengine</td>
+<td>配置引擎（Cfengine）</td>
+</tr>
+<tr>
+<td>5999</td>
+<td>cvsup [CVSup]</td>
+<td>CVSup 文件传输和更新工具</td>
+</tr>
+<tr>
+<td>6000</td>
+<td>x11 [X]</td>
+<td>X 窗口系统服务</td>
+</tr>
+<tr>
+<td>7000</td>
+<td>afs3-fileserver</td>
+<td>Andrew 文件系统（AFS）文件服务器</td>
+</tr>
+<tr>
+<td>7001</td>
+<td>afs3-callback</td>
+<td>用于给缓存管理器回电的 AFS 端口</td>
+</tr>
+<tr>
+<td>7002</td>
+<td>afs3-prserver</td>
+<td>AFS 用户和组群数据库</td>
+</tr>
+<tr>
+<td>7003</td>
+<td>afs3-vlserver</td>
+<td>AFS 文件卷位置数据库</td>
+</tr>
+<tr>
+<td>7004</td>
+<td>afs3-kaserver</td>
+<td>AFS Kerberos 验证服务</td>
+</tr>
+<tr>
+<td>7005</td>
+<td>afs3-volser</td>
+<td>AFS 文件卷管理服务器</td>
+</tr>
+<tr>
+<td>7006</td>
+<td>afs3-errors</td>
+<td>AFS 错误解释服务</td>
+</tr>
+<tr>
+<td>7007</td>
+<td>afs3-bos</td>
+<td>AFS 基本监查进程</td>
+</tr>
+<tr>
+<td>7008</td>
+<td>afs3-update</td>
+<td>AFS 服务器到服务器更新器</td>
+</tr>
+<tr>
+<td>7009</td>
+<td>afs3-rmtsys</td>
+<td>AFS 远程缓存管理器服务</td>
+</tr>
+<tr>
+<td>9876</td>
+<td>sd</td>
+<td>会话指引器</td>
+</tr>
+<tr>
+<td>10080</td>
+<td>amanda</td>
+<td>高级 Maryland 自动网络磁盘归档器（Amanda）备份服务</td>
+</tr>
+<tr>
+<td>11371</td>
+<td>pgpkeyserver</td>
+<td>良好隐私（PGP） / GNU 隐私卫士（GPG）公钥服务器</td>
+</tr>
+<tr>
+<td>11720</td>
+<td>h323callsigalt</td>
+<td>H.323 调用信号交替</td>
+</tr>
+<tr>
+<td>13720</td>
+<td>bprd</td>
+<td>Veritas NetBackup 请求守护进程（bprd）</td>
+</tr>
+<tr>
+<td>13721</td>
+<td>bpdbm</td>
+<td>Veritas NetBackup 数据库管理器（bpdbm）</td>
+</tr>
+<tr>
+<td>13722</td>
+<td>bpjava-msvc</td>
+<td>Veritas NetBackup Java / Microsoft Visual C++ (MSVC) 协议</td>
+</tr>
+<tr>
+<td>13724</td>
+<td>vnetd</td>
+<td>Veritas 网络工具</td>
+</tr>
+<tr>
+<td>13782</td>
+<td>bpcd</td>
+<td>Vertias NetBackup</td>
+</tr>
+<tr>
+<td>13783</td>
+<td>vopied</td>
+<td>Veritas VOPIED 协议</td>
+</tr>
+<tr>
+<td>22273</td>
+<td>wnn6 [wnn4]</td>
+<td>假名/汉字转换系统<a href="http://cert.sjtu.edu.cn/doc/linux/ch-ports.html#FTN.AEN5510" target="_blank" rel="noopener">[c]</a></td>
+</tr>
+<tr>
+<td>26000</td>
+<td>quake</td>
+<td>Quake（以及相关的）多人游戏服务器</td>
+</tr>
+<tr>
+<td>26208</td>
+<td>wnn6-ds</td>
+<td></td>
+</tr>
+<tr>
+<td>33434</td>
+<td>traceroute</td>
+<td>Traceroute 网络跟踪工具</td>
+</tr>
+<tr>
+<td>注: a. <code>/etc/services</code> 中的注释如下：端口1236被注册为“bvcontrol”，但是它也被 Gracilis Packeten 远程配置服务器使用。正式名称被列为主要名称，未注册的名称被列为别名。 b. 在 <code>/etc/services</code> 中的注释：端口 2600 到 2606 被 zebra 软件包未经注册而使用。主要名称是被注册的名称，被 zebra 使用的未注册名称被列为别名。 c. <code>/etc/services</code> 文件中的注释：该端口被注册为 wnn6，但是还在 FreeWnn 软件包中使用了未注册的“wnn4”。</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p><strong>表 C-3. 注册的端口</strong></p>
+<p><a href="http://cert.sjtu.edu.cn/doc/linux/ch-ports.html#TB-PORTS-DATAGRAM" target="_blank" rel="noopener">表 C-4</a>显示了一个和数据报传递协议（DDP）有关的端口列表。DDP 在 AppleTalk 网络上被使用。</p>
+<table>
+<thead>
+<tr>
+<th>端口号码 / 层</th>
+<th>名称</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1/ddp</td>
+<td>rtmp</td>
+<td>路由表管理协议</td>
+</tr>
+<tr>
+<td>2/ddp</td>
+<td>nbp</td>
+<td>名称绑定协议</td>
+</tr>
+<tr>
+<td>4/ddp</td>
+<td>echo</td>
+<td>AppleTalk Echo 协议</td>
+</tr>
+<tr>
+<td>6/ddp</td>
+<td>zip</td>
+<td>区块信息协议</td>
+</tr>
+</tbody></table>
+<p><strong>表 C-4. 数据报传递协议端口</strong></p>
+<p><a href="http://cert.sjtu.edu.cn/doc/linux/ch-ports.html#TB-PORTS-KERBEROS" target="_blank" rel="noopener">表 C-5</a>是和 Kerberos 网络验证协议相关的端口列表。在标记的地方，v5 代表 Kerberos 版本5协议。注意，这些端口没有在 IANA 注册。</p>
+<table>
+<thead>
+<tr>
+<th>端口号码 / 层</th>
+<th>名称</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>751</td>
+<td>kerberos_master</td>
+<td>Kerberos 验证</td>
+</tr>
+<tr>
+<td>752</td>
+<td>passwd_server</td>
+<td>Kerberos 口令（kpasswd）服务器</td>
+</tr>
+<tr>
+<td>754</td>
+<td>krb5_prop</td>
+<td>Kerberos v5 从属传播</td>
+</tr>
+<tr>
+<td>760</td>
+<td>krbupdate [kreg]</td>
+<td>Kerberos 注册</td>
+</tr>
+<tr>
+<td>1109</td>
+<td>kpop</td>
+<td>Kerberos 邮局协议（KPOP）</td>
+</tr>
+<tr>
+<td>2053</td>
+<td>knetd</td>
+<td>Kerberos 多路分用器</td>
+</tr>
+<tr>
+<td>2105</td>
+<td>eklogin</td>
+<td>Kerberos v5 加密的远程登录（rlogin）</td>
+</tr>
+</tbody></table>
+<p><strong>表 C-5. Kerberos（工程 Athena/MIT）端口</strong></p>
+<p><a href="http://cert.sjtu.edu.cn/doc/linux/ch-ports.html#TB-PORTS-UNREGGED" target="_blank" rel="noopener">表 C-6</a>是一个未注册的端口列表。这些端口可能被安装在你的红帽企业 Linux 系统上的服务或协议使用，或者它们是在红帽企业 Linux 和运行其它操作系统的机器通信所必需的端口。</p>
+<table>
+<thead>
+<tr>
+<th>端口号码 / 层</th>
+<th>名称</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>15/tcp</td>
+<td>netstat</td>
+<td>网络状态（netstat）</td>
+</tr>
+<tr>
+<td>98/tcp</td>
+<td>linuxconf</td>
+<td>Linuxconf Linux 管理工具</td>
+</tr>
+<tr>
+<td>106</td>
+<td>poppassd</td>
+<td>邮局协议口令改变守护进程（POPPASSD）</td>
+</tr>
+<tr>
+<td>465/tcp</td>
+<td>smtps</td>
+<td>通过安全套接字层的简单邮件传输协议（SMTPS）</td>
+</tr>
+<tr>
+<td>616/tcp</td>
+<td>gii</td>
+<td>使用网关的（选路守护进程）互动界面</td>
+</tr>
+<tr>
+<td>808</td>
+<td>omirr [omirrd]</td>
+<td>联机镜像（Omirr）文件镜像服务</td>
+</tr>
+<tr>
+<td>871/tcp</td>
+<td>supfileserv</td>
+<td>软件升级协议（SUP）服务器</td>
+</tr>
+<tr>
+<td>901/tcp</td>
+<td>swat</td>
+<td>Samba 万维网管理工具（SWAT）</td>
+</tr>
+<tr>
+<td>953</td>
+<td>rndc</td>
+<td>Berkeley 互联网名称域版本9（BIND 9）远程名称守护进程配置工具</td>
+</tr>
+<tr>
+<td>1127</td>
+<td>sufiledbg</td>
+<td>软件升级协议（SUP）调试</td>
+</tr>
+<tr>
+<td>1178/tcp</td>
+<td>skkserv</td>
+<td>简单假名到汉字（SKK）日文输入服务器</td>
+</tr>
+<tr>
+<td>1313/tcp</td>
+<td>xtel</td>
+<td>法国 Minitel 文本信息系统</td>
+</tr>
+<tr>
+<td>1529/tcp</td>
+<td>support [prmsd, gnatsd]</td>
+<td>GNATS 错误跟踪系统</td>
+</tr>
+<tr>
+<td>2003/tcp</td>
+<td>cfinger</td>
+<td>GNU Finger 服务</td>
+</tr>
+<tr>
+<td>2150</td>
+<td>ninstall</td>
+<td>网络安装服务</td>
+</tr>
+<tr>
+<td>2988</td>
+<td>afbackup</td>
+<td>afbackup 客户-服务器备份系统</td>
+</tr>
+<tr>
+<td>3128/tcp</td>
+<td>squid</td>
+<td>Squid 万维网代理缓存</td>
+</tr>
+<tr>
+<td>3455</td>
+<td>prsvp</td>
+<td>RSVP 端口</td>
+</tr>
+<tr>
+<td>5432</td>
+<td>postgres</td>
+<td>PostgreSQL 数据库</td>
+</tr>
+<tr>
+<td>4557/tcp</td>
+<td>fax</td>
+<td>FAX 传输服务（旧服务）</td>
+</tr>
+<tr>
+<td>4559/tcp</td>
+<td>hylafax</td>
+<td>HylaFAX 客户-服务器协议（新服务）</td>
+</tr>
+<tr>
+<td>5232</td>
+<td>sgi-dgl</td>
+<td>SGI 分布式图形库</td>
+</tr>
+<tr>
+<td>5354</td>
+<td>noclog</td>
+<td>NOCOL 网络操作中心记录守护进程（noclogd）</td>
+</tr>
+<tr>
+<td>5355</td>
+<td>hostmon</td>
+<td>NOCOL 网络操作中心主机监视</td>
+</tr>
+<tr>
+<td>5680/tcp</td>
+<td>canna</td>
+<td>Canna 日文字符输入界面</td>
+</tr>
+<tr>
+<td>6010/tcp</td>
+<td>x11-ssh-offset</td>
+<td>安全 Shell（SSH）X11 转发偏移</td>
+</tr>
+<tr>
+<td>6667</td>
+<td>ircd</td>
+<td>互联网中继聊天守护进程（ircd）</td>
+</tr>
+<tr>
+<td>7100/tcp</td>
+<td>xfs</td>
+<td>X 字体服务器（XFS）</td>
+</tr>
+<tr>
+<td>7666/tcp</td>
+<td>tircproxy</td>
+<td>Tircproxy IRC 代理服务</td>
+</tr>
+<tr>
+<td>8008</td>
+<td>http-alt</td>
+<td>超文本传输协议（HTTP）的另一选择</td>
+</tr>
+<tr>
+<td>8080</td>
+<td>webcache</td>
+<td>万维网（WWW）缓存服务</td>
+</tr>
+<tr>
+<td>8081</td>
+<td>tproxy</td>
+<td>透明代理</td>
+</tr>
+<tr>
+<td>9100/tcp</td>
+<td>jetdirect [laserjet, hplj]</td>
+<td>Hewlett-Packard (HP) JetDirect 网络打印服务</td>
+</tr>
+<tr>
+<td>9359</td>
+<td>mandelspawn [mandelbrot]</td>
+<td>用于 X 窗口系统的并行 Mandelbrot 生成程序</td>
+</tr>
+<tr>
+<td>10081</td>
+<td>kamanda</td>
+<td>使用 Kerberos 的 Amanda 备份服务</td>
+</tr>
+<tr>
+<td>10082/tcp</td>
+<td>amandaidx</td>
+<td>Amanda 备份服务</td>
+</tr>
+<tr>
+<td>10083/tcp</td>
+<td>amidxtape</td>
+<td>Amanda 备份服务</td>
+</tr>
+<tr>
+<td>20011</td>
+<td>isdnlog</td>
+<td>综合业务数字网（ISDN）登录系统</td>
+</tr>
+<tr>
+<td>20012</td>
+<td>vboxd</td>
+<td>ISDN 音箱守护进程（vboxd）</td>
+</tr>
+<tr>
+<td>22305/tcp</td>
+<td>wnn4_Kr</td>
+<td>kWnn 韩文输入系统</td>
+</tr>
+<tr>
+<td>22289/tcp</td>
+<td>wnn4_Cn</td>
+<td>cWnn 中文输入系统</td>
+</tr>
+<tr>
+<td>22321/tcp</td>
+<td>wnn4_Tw</td>
+<td>tWnn 中文输入系统（台湾）</td>
+</tr>
+<tr>
+<td>24554</td>
+<td>binkp</td>
+<td>Binkley TCP/IP Fidonet 邮寄程序守护进程</td>
+</tr>
+<tr>
+<td>27374</td>
+<td>asp</td>
+<td>地址搜索协议</td>
+</tr>
+<tr>
+<td>60177</td>
+<td>tfido</td>
+<td>Ifmail FidoNet 兼容邮寄服务</td>
+</tr>
+<tr>
+<td>60179</td>
+<td>fido</td>
+<td>FidoNet 电子邮件和新闻网络</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><a href="http://cert.sjtu.edu.cn/doc/linux/index.html" target="_blank" rel="noopener">红帽企业linux3安全指南</a></p>
+</blockquote>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+            
+            
+            <div class="reprint1">
+                <p>
+                    <span class="reprint1-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="https://918q.top" class="b-link-green">Asz的博客</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2019/09/20/linux-chang-jian-duan-kou/" class="b-link-green">linux常见端口</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+    /* valine 评论框增加背景图片 */
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("") 100% 100% no-repeat;
+    }
+
+    #vcomments input[type=text],
+    #vcomments input[type=email],
+    #vcomments input[type=url],
+    #vcomments textarea {
+        box-sizing: border-box;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    /* 修复评论第一行位置错位 */
+    .v .vlist .vcard {
+    padding-top: 2.5em !important ;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<!-- <link rel="stylesheet" type="text/css" href="/libs//libs/jQuery-emoji/dist/css/jquery.emoji.css">
+<script src="/libs//libs/jQuery-emoji/dist/js/jquery.emoji.min.js"></script>
+<script src="/libs//libs/jQuery-emoji/dist/js/emoji.list.js"></script> -->
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'j17miAOpnIUtYQi0rwa5ic4p-gzGzoHsz',
+        appKey: 'wdF6SeCRaaiJEE5uhjuS7TBk',
+        notify: 'true' === 'true',
+        verify: 'true' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go',
+
+    });
+
+//     function parse_emoji() {
+//     jQuery(".vcontent").emojiParse({
+//       basePath: '/libs/jQuery-emoji/images/emoji',
+//       icons: emojiLists   // 注：详见 js/emoji.list.js
+//     });
+//   }
+  
+//   setTimeout(function() {
+//     // jQuery emoji 解析
+//     parse_emoji();
+//     // jquery emoji 初始化
+//     jQuery(".veditor").emoji({
+//       showTab: true,
+//       animation: 'slide',
+//       basePath: '/libs/jQuery-emoji/images/emoji',
+//       icons: emojiLists  // 注：详见 js/emoji.list.js
+//     });
+//     jQuery(".vmore").on("click", function() {
+//       setTimeout(function() {
+//         parse_emoji();
+//       }, 500);
+//     });
+//   }, 800)
+
+</script>
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/09/21/phpstudy-hou-men-kuai-su-zi-cha/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="phpStudy 后门快速自查">
+                        
+                        <span class="card-title">phpStudy 后门快速自查</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            被感染后门的是 /php/php-5.4.45/ext/php_xmlrpc.dll
+18的52 54都存在
+md5是 C339482FD2B233FB0A555B629C0EA5D5
+也可以直接记事本打开搜索 @eval
+
+
+下载站下载的
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-21
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/应急响应/" class="post-category" target="_blank">
+                                    应急响应
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/phpStudy后门/" target="_blank">
+                        <span class="chip bg-color">phpStudy后门</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/09/20/linux-bu-fen-chang-yong-ming-ling-xue-xi-ji-lu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Linux部分常用命令学习记录">
+                        
+                        <span class="card-title">Linux部分常用命令学习记录</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Linux部分常用命令
+ls 显示目标列表
+ls -a 显示所有档案及目录（ls内定将档案名或目录名称为“.”的视为影藏，不会列出）；
+ls -l 以长格式显示目录下的内容列表。输出的信息从左到右依次包括文件名，文件类型、权限模式、硬连接数
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/linux入门/" class="post-category" target="_blank">
+                                    linux入门
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/linux常用指令/" target="_blank">
+                        <span class="chip bg-color">linux常用指令</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Asz的博客<br />'
+            + '作者: Asz<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+        <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&copy; 2019 Asz <span class="with-love" id="heart"><i class="fa fa-heart" style="color:#ff71a8;"></i></span>鲁ICP备19035615号-2
+            <br>
+            <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
+            <br>
+
+            
+
+            
+                    
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+			<i class="fa fa-heart-o"></i>
+                        本站总访问量: <span id="busuanzi_value_site_pv" class="white-color"></span>
+                    
+        
+                    
+                        <span id="busuanzi_container_site_uv" style='display:none'></span>
+                        人次&nbsp; | &nbsp;访客人数: <span id="busuanzi_value_site_uv" class="white-color"></span> 人
+                    
+    
+            
+
+            
+                &nbsp; | &nbsp;字数统计:&nbsp;
+                <span class="white-color">35k</span> 字
+            
+
+            
+            <br>
+
+        </div>
+
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/cscwdxgg" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+ 
+    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=3233397204@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=3233397204&site=qq&menu=yes" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+
+        var t1 = Date.UTC(2019, 07, 30, 00, 00, 00); //北京时间2019-8-1 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes *
+            minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已勉强运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
+            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒" ;
+    } /*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+
+
+
+
+
+        <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+        <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+        <script src="/libs/materialize/materialize.min.js"></script>
+        <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+        <script src="/libs/aos/aos.js"></script>
+        <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+        <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+        <script src="/js/matery.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+        
+            <script src="/libs/others/clicklove.js"></script>
+        
+
+        
+            <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+        
+
+        <!-- 洪卫 shw2018 add 2019.08.28 -->
+        <script type="text/javascript">
+            var OriginTitile = document.title,
+                st;
+            document.addEventListener("visibilitychange", function () {
+                document.hidden ? (document.title = "看不见我🙈~看不见我🙈~", clearTimeout(st)) : (document.title =
+                    "(๑•̀ㅂ•́) ✧被发现了～", st = setTimeout(function () {
+                        document.title = OriginTitile
+                    }, 3e3))
+            })
+        </script>
+	<!-- 天气接口控件 Asz add 2020/04/18 -->
+	<style type="text/css">
+	#weather-float-he {
+	 position: absolute;
+	 z-index: 9999;
+	 padding: 0px;
+	 top: 8px;
+	left: 8px;
+	}
+	</style>
+	
+		<script type="text/javascript">
+		WIDGET = {FID: '2cKE5vvuJ9'}
+		</script>
+		<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+	
+
+        <!-- 鼠标点击烟花爆炸效果  洪卫 shw2018 add 2019.09.09 -->
+        
+
+        <!-- 背景樱花飘落特效洪卫 shw2018 add 2019.09.10 -->
+        
+            <script type="text/javascript">
+            //只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+            }
+            </script>
+        
+
+        <!-- 鼠标点击文字特效 洪卫 shw2018 add 2019.09.10-->
+        
+            <script src="/js/wenzi.js" type="text/javascript"></script>
+        
+
+        <!-- 背景雪花飘落特效 洪卫 shw2018 add 2019.09.10 -->
+        
+
+        <!-- 在线聊天工具  洪卫 shw2018 add 2019.09.11 -->
+       
+
+        <!-- 背景 canvas-nest  洪卫 shw 2018  add 2019.09.15-->
+        
+
+        <!-- 背景静止彩带  洪卫 shw 2018  add 2019.09.15-->
+        
+
+        <!-- 背景动态彩带 洪卫 shw 2018  add 2019.09.15-->
+        
+
+    <script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+</html>
